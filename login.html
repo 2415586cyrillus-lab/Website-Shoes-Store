@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Login - NSB</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="nav-left"><a href="index.html"><img src="assets/logo.png" class="logo"></a></div>
+  <nav class="navbar">
+    <a href="men.html">MEN</a>
+    <a href="women.html">WOMEN</a>
+    <a href="kids.html">KIDS</a>
+    <a href="designer.html">DESIGNER</a>
+    <a href="sports.html">SPORTS</a>
+  </nav>
+  <div class="nav-right">
+    <div class="search-box"><input></div>
+    <a href="help.html">HELP</a>
+    <a href="login.html">LOGIN</a>
+    <span id="cartToggle" class="cart-icon">🛒</span>
+  </div>
+</header>
+
+<section class="center-card">
+  <h1>Masuk ke Akun</h1>
+  <form id="loginForm" onsubmit="return false;">
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="email@example.com" required>
+    </div>
+    <div class="form-row">
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="password" required>
+    </div>
+    <div style="margin-top:12px">
+      <button class="btn btn-primary" onclick="doLogin()">LOGIN</button>
+    </div>
+  </form>
+</section>
+
+<div id="cartDrawer" class="cart-drawer"></div>
+<script src="script.js"></script>
+<script>
+function doLogin(){
+  const e = document.getElementById('email').value.trim();
+  const p = document.getElementById('password').value.trim();
+  if(!e||!p){ alert('Isi email & password'); return; }
+  localStorage.setItem('bgenx_user', JSON.stringify({email:e}));
+  alert('Login berhasil');
+  window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>

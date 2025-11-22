@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Designer - NSB</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-category="designer">
+
+<header class="header">
+  <div class="nav-left"><a href="index.html"><img src="assets/logo.png" class="logo"></a></div>
+  <nav class="navbar">
+    <a href="men.html">MEN</a>
+    <a href="women.html">WOMEN</a>
+    <a href="kids.html">KIDS</a>
+    <a href="designer.html">DESIGNER</a>
+    <a href="sports.html">SPORTS</a>
+  </nav>
+  <div class="nav-right">
+    <div class="search-box"><input id="filterSearch" placeholder="Cari produk..."></div>
+    <a class="help" href="help.html">HELP</a>
+    <a class="login" href="login.html">LOGIN</a>
+    <span id="cartToggle" class="cart-icon">🛒</span>
+  </div>
+</header>
+
+<main class="container">
+  <section style="margin-top:18px;padding:0 0 20px 0">
+    <h2 class="latest-title">DESIGNER COLLECTION</h2>
+    <div class="catalog-controls">
+      <select id="filterBrand" class="select"></select>
+      <button class="btn btn-outline" onclick="renderCatalog('men')">Show</button>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+  </section>
+</main>
+
+<div id="cartDrawer" class="cart-drawer"></div>
+<div id="detailModal" style="display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;padding:18px;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,0.2);z-index:2000;max-width:420px">
+  <img class="d-img" src="" style="width:100%;height:200px;object-fit:cover;border-radius:8px">
+  <h3 class="d-title"></h3>
+  <div class="d-meta"></div>
+  <div style="margin-top:12px;display:flex;gap:8px"><button id="detailClose" class="btn btn-outline">Close</button><button class="btn btn-primary" onclick="addToCart(window._lastDetailId||0)">Add to cart</button></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
